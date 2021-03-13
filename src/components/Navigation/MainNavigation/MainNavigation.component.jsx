@@ -14,13 +14,17 @@ const Button = styled.button`
   justify-content: space-around;
   margin-right: 2rem;
   cursor: pointer;
-  margin-top: 23px;
+  margin-top: 17px;
 
   span {
     display: block;
     width: 1rem;
     height: 2px;
     background: white;
+  }
+
+  @media (min-width: 600px) {
+    margin-top: 23px;
   }
 `;
 
