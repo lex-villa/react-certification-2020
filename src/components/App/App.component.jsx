@@ -30,16 +30,10 @@ function App() {
   //   };
   // }, []);
 
-  return (
-    <Layout>
-
-    </Layout>
-  );
+  return <Layout />;
 }
 
 export default App;
-
-
 
 // useLayoutEffect(() => {
 //   const { body } = document;
@@ -102,4 +96,3 @@ export default App;
 //     </BrowserRouter>
 //   );
 // }
-

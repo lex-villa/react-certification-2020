@@ -9,7 +9,7 @@ function Layout({ children }) {
       <MainNavigation />
       <main className="container">{children}</main>
     </>
-  )
+  );
 }
 
 export default Layout;
