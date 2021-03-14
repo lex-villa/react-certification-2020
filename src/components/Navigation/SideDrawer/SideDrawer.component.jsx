@@ -15,22 +15,24 @@ const Aside = styled.aside`
 `;
 
 const SideDrawer = (props) => {
-	const nodeRef = useRef(null);
+  const nodeRef = useRef(null);
 
-	const content = (
-		<CSSTransition
-			in={props.show}
-			timeout={300}
-			classNames="slide-in-left"
-			mountOnEnter
-			unmountOnExit
-			nodeRef={nodeRef}
-		>
-			<Aside onClick={props.onClick} ref={nodeRef}>{props.children}</Aside>
-		</CSSTransition>
-	);
+  const content = (
+    <CSSTransition
+      in={props.show}
+      timeout={300}
+      classNames="slide-in-left"
+      mountOnEnter
+      unmountOnExit
+      nodeRef={nodeRef}
+    >
+      <Aside onClick={props.onClick} ref={nodeRef}>
+        {props.children}
+      </Aside>
+    </CSSTransition>
+  );
 
-	return ReactDOM.createPortal(content, document.getElementById('drawer-hook'));
+  return ReactDOM.createPortal(content, document.getElementById('drawer-hook'));
 };
 
 export default SideDrawer;
