@@ -1,5 +1,6 @@
 import React from 'react';
 // import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 // import AuthProvider from '../../providers/Auth';
 // import HomePage from '../../pages/Home';
@@ -30,7 +31,12 @@ function App() {
   //   };
   // }, []);
 
-  return <Layout />;
+
+  return (
+    <BrowserRouter>
+      <Layout />;
+    </BrowserRouter>
+  )
 }
 
 export default App;

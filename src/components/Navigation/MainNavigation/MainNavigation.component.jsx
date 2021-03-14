@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import MainHeader from '../MainHeader';
 import SideDrawer from '../SideDrawer';
+import NavLinks from '../NavLinks';
 import Backdrop from '../../UIElements/Backdrop';
 
 // Styled components
@@ -41,7 +42,9 @@ const MainNavigation = () => {
     <>
       {drawerIsOpen && <Backdrop onClick={closeDrawerHandler} />}
       <SideDrawer show={drawerIsOpen} onClick={closeDrawerHandler}>
-        <p>Holi</p>
+        <nav style={{ height: '100%' }}>
+          <NavLinks />
+        </nav>
       </SideDrawer>
       <MainHeader>
         <Button onClick={openDrawerHandler}>
