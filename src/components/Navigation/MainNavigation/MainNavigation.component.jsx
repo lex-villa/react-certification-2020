@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import MainHeader from '../MainHeader';
+import SideDrawer from '../SideDrawer';
+import Backdrop from '../../UIElements/Backdrop';
 
 // Styled components
 const Button = styled.button`
@@ -29,14 +31,26 @@ const Button = styled.button`
 `;
 
 const MainNavigation = () => {
+  const [drawerIsOpen, setDrawerIsOpen] = useState(false);
+
+  const openDrawerHandler = () => setDrawerIsOpen(true);
+
+  const closeDrawerHandler = () => setDrawerIsOpen(false);
+
   return (
-    <MainHeader>
-      <Button>
-        <span />
-        <span />
-        <span />
-      </Button>
-    </MainHeader>
+    <>
+      {drawerIsOpen && <Backdrop onClick={closeDrawerHandler} />}
+      <SideDrawer show={drawerIsOpen} onClick={closeDrawerHandler}>
+        <p>Holi</p>
+      </SideDrawer>
+      <MainHeader>
+        <Button onClick={openDrawerHandler}>
+          <span />
+          <span />
+          <span />
+        </Button>
+      </MainHeader>
+    </>
   );
 };
 
