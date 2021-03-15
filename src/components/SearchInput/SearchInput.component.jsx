@@ -13,6 +13,7 @@ const Form = styled.form`
     width: 30px;
     height: 28px;
     background: red;
+		cursor: text;
   }
 
   input {
@@ -36,19 +37,19 @@ const Form = styled.form`
 `;
 
 const SearchInput = () => {
-  const onSubmitHandler = () => {
-    console.log('estoy buscando...');
-  };
+	const onSubmitHandler = () => {
+		console.log('estoy buscando...');
+	};
 
-  return (
-    <Form onSubmit={onSubmitHandler}>
-      <label htmlFor="searchInput">
-        {/* <img src='https://svg-clipart.com/thumbs/white/ktmN7fh-search-icon-white-one-clipart.jpg' alt='search' /> */}
-      </label>
+	return (
+		<Form onSubmit={onSubmitHandler}>
+			<label htmlFor="searchInput">
+				{/* <img src='https://svg-clipart.com/thumbs/white/ktmN7fh-search-icon-white-one-clipart.jpg' alt='search' /> */}
+			</label>
 
-      <input id="searchInput" type="text" placeholder="Search..." />
-    </Form>
-  );
+			<input id="searchInput" type="text" placeholder="Search..." />
+		</Form>
+	);
 };
 
 export default SearchInput;
