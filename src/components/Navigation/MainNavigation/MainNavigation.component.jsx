@@ -5,6 +5,7 @@ import MainHeader from '../MainHeader';
 import SideDrawer from '../SideDrawer';
 import NavLinks from '../NavLinks';
 import Backdrop from '../../UIElements/Backdrop';
+import SearchInput from '../../SearchInput';
 
 // Styled components
 const Button = styled.button`
@@ -15,7 +16,6 @@ const Button = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin-right: 2rem;
   cursor: pointer;
   margin-top: 17px;
 
@@ -47,11 +47,15 @@ const MainNavigation = () => {
         </nav>
       </SideDrawer>
       <MainHeader>
-        <Button onClick={openDrawerHandler}>
-          <span />
-          <span />
-          <span />
-        </Button>
+        <div style={{ display: 'flex' }}>
+          <Button onClick={openDrawerHandler}>
+            <span />
+            <span />
+            <span />
+          </Button>
+
+          <SearchInput />
+        </div>
       </MainHeader>
     </>
   );
