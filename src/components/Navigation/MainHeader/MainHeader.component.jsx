@@ -5,6 +5,7 @@ import styled from 'styled-components';
 // Styled components
 const Header = styled.header`
   background-color: #1c5476;
+  display: flex;
   width: 100%;
   height: 48px;
   align-items: center;

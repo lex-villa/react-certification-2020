@@ -6,6 +6,7 @@ import SideDrawer from '../SideDrawer';
 import NavLinks from '../NavLinks';
 import Backdrop from '../../UIElements/Backdrop';
 import SearchInput from '../../SearchInput';
+import Toggle from '../../UIElements/Toggle';
 
 // Styled components
 const Button = styled.button`
@@ -18,6 +19,7 @@ const Button = styled.button`
   justify-content: space-around;
   cursor: pointer;
   margin-top: 17px;
+  outline: none;
 
   span {
     display: block;
@@ -28,6 +30,27 @@ const Button = styled.button`
 
   @media (min-width: 600px) {
     margin-top: 23px;
+  }
+`;
+
+const ToggleAndLogIconContainer = styled.div`
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  align-self: auto;
+  margin-left: auto;
+
+  .logIcon {
+    div {
+      margin: 0;
+      margin-right: 10px;
+      background-color: red;
+      width: 40px;
+      height: 40px;
+      border-radius: 31px;
+      cursor: pointer;
+    }
   }
 `;
 
@@ -47,7 +70,7 @@ const MainNavigation = () => {
         </nav>
       </SideDrawer>
       <MainHeader>
-        <div style={{ display: 'flex' }}>
+        <div style={{ display: 'flex', alignSelf: 'baseline' }}>
           <Button onClick={openDrawerHandler}>
             <span />
             <span />
@@ -56,6 +79,17 @@ const MainNavigation = () => {
 
           <SearchInput />
         </div>
+
+        <ToggleAndLogIconContainer>
+          <div>
+            <Toggle />
+          </div>
+
+          <div className="logIcon">
+            <div />
+          </div>
+        </ToggleAndLogIconContainer>
+
       </MainHeader>
     </>
   );
