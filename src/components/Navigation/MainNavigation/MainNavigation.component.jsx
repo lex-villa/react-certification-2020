@@ -89,7 +89,6 @@ const MainNavigation = () => {
             <div />
           </div>
         </ToggleAndLogIconContainer>
-
       </MainHeader>
     </>
   );

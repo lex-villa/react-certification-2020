@@ -13,7 +13,7 @@ const Form = styled.form`
     width: 30px;
     height: 28px;
     background: red;
-		cursor: text;
+    cursor: text;
   }
 
   input {
