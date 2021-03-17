@@ -24,7 +24,6 @@ const GridView = styled.div`
   }
 `;
 
-
 const HomePage = () => {
   return (
     <GridView>
@@ -38,6 +37,6 @@ const HomePage = () => {
       ))}
     </GridView>
   );
-}
+};
 
 export default HomePage;
