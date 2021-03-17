@@ -2,8 +2,8 @@ import React from 'react';
 // import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 
+import HomePage from '../../pages/Home';
 // import AuthProvider from '../../providers/Auth';
-// import HomePage from '../../pages/Home';
 // import LoginPage from '../../pages/Login';
 // import NotFound from '../../pages/NotFound';
 // import SecretPage from '../../pages/Secret';
@@ -33,7 +33,9 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Layout />;
+      <Layout>
+        <HomePage />
+      </Layout>
     </BrowserRouter>
   );
 }

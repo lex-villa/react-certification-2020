@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Form = styled.form`
-  border: 2px solid purple;
   width: fit-content;
   height: 32px;
   display: flex;
@@ -10,8 +9,8 @@ const Form = styled.form`
   margin-left: 16px;
 
   label {
-    width: 30px;
-    height: 28px;
+    width: 32px;
+    height: 100%;
     background: red;
     cursor: text;
   }
@@ -22,7 +21,6 @@ const Form = styled.form`
   }
 
   @media (min-width: 600px) {
-    border: 2px solid purple;
     width: fit-content;
     height: 37px;
     display: flex;
@@ -30,8 +28,8 @@ const Form = styled.form`
     margin-left: 50px;
 
     label {
-      width: 30px;
-      height: 33px;
+      width: 37px;
+      height: 100%;
       background: red;
     }
   }

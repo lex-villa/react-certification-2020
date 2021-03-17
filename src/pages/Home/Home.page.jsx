@@ -1,38 +1,42 @@
-import React, { useRef } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React from 'react';
+import styled from 'styled-components';
+import { data } from '../../utils/youtube-videos-mock';
 
-import { useAuth } from '../../providers/Auth';
-import './Home.styles.css';
+import CardHomePreview from '../../components/CardHomePreview';
 
-function HomePage() {
-  const history = useHistory();
-  const sectionRef = useRef(null);
-  const { authenticated, logout } = useAuth();
+const GridView = styled.div`
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 1fr);
+  grid-auto-rows: 5%;
+  grid-row-gap: 10px;
+  justify-items: center;
+  align-items: center;
+  grid-column-gap: 10px;
 
-  function deAuthenticate(event) {
-    event.preventDefault();
-    logout();
-    history.push('/');
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 364px;
   }
+`;
 
+
+const HomePage = () => {
   return (
-    <section className="homepage" ref={sectionRef}>
-      <h1>Hello stranger!</h1>
-      {authenticated ? (
-        <>
-          <h2>Good to have you back</h2>
-          <span>
-            <Link to="/" onClick={deAuthenticate}>
-              ← logout
-            </Link>
-            <span className="separator" />
-            <Link to="/secret">show me something cool →</Link>
-          </span>
-        </>
-      ) : (
-        <Link to="/login">let me in →</Link>
-      )}
-    </section>
+    <GridView>
+      {data.items.map((element) => (
+        <CardHomePreview
+          key={`${element.snippet.title}`}
+          image={element.snippet.thumbnails.high.url}
+          title={element.snippet.title}
+          description={element.snippet.description}
+        />
+      ))}
+    </GridView>
   );
 }
 
