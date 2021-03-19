@@ -14,7 +14,7 @@ const GridView = styled.div`
   grid-auto-rows: 5%;
   grid-row-gap: 10px;
   justify-items: center;
-  align-items: center; 
+  align-items: center;
   grid-column-gap: 10px;
 
   @media (min-width: 600px) {
@@ -24,18 +24,18 @@ const GridView = styled.div`
 `;
 
 const VideoListHome = (props) => {
-	return (
-		<GridView>
-			{props.data.items.map((element) => (
-				<CardHomePreview
-					key={`${element.id.videoId}`}
-					image={element.snippet.thumbnails.high.url}
-					title={element.snippet.title}
-					description={element.snippet.description}
-				/>
-			))}
-		</GridView>
-	)
+  return (
+    <GridView>
+      {props.data.items.map((element) => (
+        <CardHomePreview
+          key={`${element.id.videoId}`}
+          image={element.snippet.thumbnails.high.url}
+          title={element.snippet.title}
+          description={element.snippet.description}
+        />
+      ))}
+    </GridView>
+  );
 };
 
 export default VideoListHome;
