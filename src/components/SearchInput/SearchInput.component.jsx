@@ -1,55 +1,20 @@
 import React from 'react';
-import styled from 'styled-components';
 
-const Form = styled.form`
-  width: fit-content;
-  height: 32px;
-  display: flex;
-  margin-top: 10px;
-  margin-left: 16px;
-
-  label {
-    width: 32px;
-    height: 100%;
-    background: red;
-    cursor: text;
-  }
-
-  input {
-    width: 205px;
-    outline: none;
-  }
-
-  @media (min-width: 600px) {
-    width: fit-content;
-    height: 37px;
-    display: flex;
-    margin-top: 14px;
-    margin-left: 50px;
-
-    label {
-      width: 37px;
-      height: 100%;
-      background: red;
-    }
-  }
-`;
+import { Form } from './SearchInput.styled';
 
 const SearchInput = () => {
-  const onSubmitHandler = (event) => {
-    event.preventDefault();
-    console.log('estoy buscando...');
-  };
+	const onSubmitHandler = (event) => {
+		event.preventDefault();
+		console.log('estoy buscando...');
+	};
 
-  return (
-    <Form onSubmit={onSubmitHandler}>
-      <label htmlFor="searchInput">
-        {/* <img src='https://svg-clipart.com/thumbs/white/ktmN7fh-search-icon-white-one-clipart.jpg' alt='search' /> */}
-      </label>
+	return (
+		<Form onSubmit={onSubmitHandler}>
+			<div htmlFor="searchInput" />
+			<input id="searchInput" type="text" placeholder="Search..." />
 
-      <input id="searchInput" type="text" placeholder="Search..." />
-    </Form>
-  );
+		</Form>
+	);
 };
 
 export default SearchInput;

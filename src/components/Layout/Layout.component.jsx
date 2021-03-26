@@ -1,13 +1,13 @@
 import React from 'react';
-import MainNavigation from '../Navigation/MainNavigation';
 
-import './Layout.styles.css';
+import MainNavigation from '../Navigation/MainNavigation';
+import { Main } from './Layout.styled';
 
 function Layout({ children }) {
   return (
     <>
       <MainNavigation />
-      <main className="container">{children}</main>
+      <Main className="container">{children}</Main>
     </>
   );
 }

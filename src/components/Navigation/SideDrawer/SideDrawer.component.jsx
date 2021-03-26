@@ -1,18 +1,9 @@
 import React, { useRef } from 'react';
 import ReactDOM from 'react-dom';
-import styled from 'styled-components';
 import { CSSTransition } from 'react-transition-group';
 
-const Aside = styled.aside`
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 100;
-  height: 100vh;
-  width: 250px;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-`;
+import { Aside } from './SideDrawer.styled';
+
 
 const SideDrawer = (props) => {
   const nodeRef = useRef(null);
