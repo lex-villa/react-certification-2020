@@ -4,7 +4,6 @@ import { CSSTransition } from 'react-transition-group';
 
 import { Aside } from './SideDrawer.styled';
 
-
 const SideDrawer = (props) => {
   const nodeRef = useRef(null);
 

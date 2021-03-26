@@ -3,7 +3,6 @@ import React from 'react';
 import CardHomePreview from '../CardHomePreview';
 import { GridView } from './VideoListHome.styled';
 
-
 const VideoListHome = (props) => {
   return (
     <GridView>
