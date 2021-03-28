@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 import HomePage from '../../pages/Home';
 import Layout from '../Layout';
 
-function App() {
+const App = () => {
+  const [queryFromSeacrhInput, setQueryFromSearchInput] = useState('Wizeline');
+
   return (
     <BrowserRouter>
-      <Layout>
-        <HomePage />
+      <Layout setQueryFromSearchInput={setQueryFromSearchInput}>
+        <HomePage queryFromSeacrhInput={queryFromSeacrhInput} />
       </Layout>
     </BrowserRouter>
   );
