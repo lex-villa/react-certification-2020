@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 import { VideoPlayerContainer } from './VideoPlayer.styled';
 
 const VideoPlayer = ({ videoInfo }) => {

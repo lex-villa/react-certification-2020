@@ -7,10 +7,10 @@ import VideoPlayer from '../../components/VideoPlayer/VideoPlayer.component';
 import { useHttpClient } from '../../utils/hooks/http-hook';
 
 const VideoDetails = () => {
-  const videoId = useParams().videoId;
+  const { videoId } = useParams();
 
   const [videoInfo, setVideoInfo] = useState();
-  //const [videosSuggested, setVideoSuggested] = useState();
+  // const [videosSuggested, setVideoSuggested] = useState();
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
 
   useEffect(() => {
@@ -49,7 +49,7 @@ const VideoDetails = () => {
     // };
 
     fetchVideoInfo(videoId);
-    //fecthVideosSuggested(videoId);
+    // fecthVideosSuggested(videoId);
   }, [sendRequest, videoId]);
 
   return (

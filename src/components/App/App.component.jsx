@@ -8,7 +8,6 @@ import Layout from '../Layout';
 const App = () => {
   const [queryFromSeacrhInput, setQueryFromSearchInput] = useState('Wizeline');
 
-
   const routes = (
     <Switch>
       <Route path="/" exact>
@@ -18,7 +17,7 @@ const App = () => {
         <VideoDetails />
       </Route>
     </Switch>
-  )
+  );
 
   return (
     <BrowserRouter>
@@ -27,6 +26,6 @@ const App = () => {
       </Layout>
     </BrowserRouter>
   );
-}
+};
 
 export default App;
