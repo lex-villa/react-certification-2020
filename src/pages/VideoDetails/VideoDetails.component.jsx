@@ -58,7 +58,7 @@ const VideoDetails = () => {
         setVideoSuggested(responseData);
       } catch (err) {
         console.log(err);
-      };
+      }
     };
 
     fetchVideoInfo(videoId);
