@@ -13,8 +13,14 @@ const SearchInput = ({ setQueryFromSearchInput }) => {
 
   return (
     <Form onSubmit={onSubmitHandler}>
-      <div htmlFor="searchInput" onClick={onSubmitHandler} />
-      <input id="searchInput" type="text" placeholder="Search..." value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+      <div htmlFor="searchInput" onClick={onSubmitHandler} aria-hidden="true" />
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Search..."
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+      />
     </Form>
   );
 };
