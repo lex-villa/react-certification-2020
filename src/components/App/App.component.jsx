@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import HomePage from '../../pages/Home';
 import VideoDetails from '../../pages/VideoDetails/VideoDetails.component';
 import Layout from '../Layout';
+import { Context } from '../../utils/context/context';
 
 const App = () => {
   const [queryFromSeacrhInput, setQueryFromSearchInput] = useState('Goku vs Jiren');
@@ -11,7 +12,7 @@ const App = () => {
   const routes = (
     <Switch>
       <Route path="/" exact>
-        <HomePage queryFromSeacrhInput={queryFromSeacrhInput} />
+        <HomePage />
       </Route>
       <Route path="/videoDetails/:videoId">
         <VideoDetails />
@@ -20,11 +21,18 @@ const App = () => {
   );
 
   return (
-    <BrowserRouter>
-      <Layout setQueryFromSearchInput={setQueryFromSearchInput}>
-        <main>{routes}</main>
-      </Layout>
-    </BrowserRouter>
+    <Context.Provider
+      value={{
+        queryToSearch: queryFromSeacrhInput,
+        setQueryFromSearchInput,
+      }}
+    >
+      <BrowserRouter>
+        <Layout>
+          <main>{routes}</main>
+        </Layout>
+      </BrowserRouter>
+    </Context.Provider>
   );
 };
 

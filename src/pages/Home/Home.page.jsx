@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 import ErrorModal from '../../components/UIElements/ErrorModal/ErrorModal.component';
 import VideoListHome from '../../components/VideoListHome/VideoListHome.component';
 import LoadingSpinner from '../../components/UIElements/LoadingSpinner';
 import { useHttpClient } from '../../utils/hooks/http-hook';
-// import { data } from '../../utils/youtube-videos-mock';
+import { Context } from '../../utils/context/context';
 
-const HomePage = (props) => {
-  const { queryFromSeacrhInput } = props;
+const HomePage = () => {
   const [data, setData] = useState();
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
+  const context = useContext(Context);
 
   useEffect(() => {
     const fetchPlaces = async (queryFromSearchBarParam) => {
@@ -29,8 +29,8 @@ const HomePage = (props) => {
       }
     };
 
-    fetchPlaces(queryFromSeacrhInput);
-  }, [sendRequest, queryFromSeacrhInput]);
+    fetchPlaces(context.queryToSearch);
+  }, [sendRequest, context.queryToSearch]);
 
   return (
     <>

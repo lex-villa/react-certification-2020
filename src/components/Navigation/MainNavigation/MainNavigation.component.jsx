@@ -8,7 +8,7 @@ import SearchInput from '../../SearchInput';
 import Toggle from '../../UIElements/Toggle';
 import { Button, ToggleAndLogIconContainer } from './MainNavigation.styled';
 
-const MainNavigation = ({ setQueryFromSearchInput }) => {
+const MainNavigation = () => {
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
 
   const openDrawerHandler = () => setDrawerIsOpen(true);
@@ -31,7 +31,7 @@ const MainNavigation = ({ setQueryFromSearchInput }) => {
             <span />
           </Button>
 
-          <SearchInput setQueryFromSearchInput={setQueryFromSearchInput} />
+          <SearchInput />
         </div>
 
         <ToggleAndLogIconContainer>
