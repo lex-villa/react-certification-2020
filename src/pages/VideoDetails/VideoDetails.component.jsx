@@ -6,6 +6,7 @@ import ErrorModal from '../../components/UIElements/ErrorModal/ErrorModal.compon
 import LoadingSpinner from '../../components/UIElements/LoadingSpinner';
 import VideoPlayer from '../../components/VideoPlayer/VideoPlayer.component';
 import { useHttpClient } from '../../utils/hooks/http-hook';
+import { VideoDetailsContainer } from './VideoDetails.styled';
 
 const VideoDetails = () => {
   const { videoId } = useParams();
@@ -74,10 +75,19 @@ const VideoDetails = () => {
           <LoadingSpinner />
         </div>
       )}
-      {!isLoadingFetchVideoInfo && videoInfo && <VideoPlayer videoInfo={videoInfo} />}
-      {!isLoadingSuggestedVideos && videosSuggested && (
-        <ListSuggestedVideos videosSuggested={videosSuggested.items} />
-      )}
+      <VideoDetailsContainer>
+        {!isLoadingFetchVideoInfo && videoInfo && (
+          <div className="videoDetails__videoPlayer--position">
+            <VideoPlayer videoInfo={videoInfo} />
+          </div>
+        )}
+
+        {!isLoadingSuggestedVideos && videosSuggested && (
+          <div className="videoDetails__listSuggestedVideos--position">
+            <ListSuggestedVideos videosSuggested={videosSuggested.items} />
+          </div>
+        )}
+      </VideoDetailsContainer>
     </>
   );
 };
