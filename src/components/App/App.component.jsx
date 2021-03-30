@@ -6,7 +6,7 @@ import VideoDetails from '../../pages/VideoDetails/VideoDetails.component';
 import Layout from '../Layout';
 
 const App = () => {
-  const [queryFromSeacrhInput, setQueryFromSearchInput] = useState('Wizeline');
+  const [queryFromSeacrhInput, setQueryFromSearchInput] = useState('Goku vs Jiren');
 
   const routes = (
     <Switch>

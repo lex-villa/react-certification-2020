@@ -4,8 +4,9 @@ export const VideoDetailsContainer = styled.div`
   display: flex;
 
   .videoDetails__videoPlayer--position {
-    border: 1px solid red;
     width: 150%;
+    height: 85.9vh;
+    overflow: hidden;
   }
 
   .videoDetails__listSuggestedVideos--position {
