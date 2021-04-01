@@ -4,12 +4,12 @@ import ErrorModal from '../../components/UIElements/ErrorModal/ErrorModal.compon
 import VideoListHome from '../../components/VideoListHome/VideoListHome.component';
 import LoadingSpinner from '../../components/UIElements/LoadingSpinner';
 import { useHttpClient } from '../../utils/hooks/http-hook';
-import { Context } from '../../utils/context/context';
+import { Context } from '../../utils/store/Store';
 
 const HomePage = () => {
   const [data, setData] = useState();
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
-  const context = useContext(Context);
+  const state = useContext(Context)[0];
 
   useEffect(() => {
     const fetchPlaces = async (queryFromSearchBarParam) => {
@@ -29,8 +29,8 @@ const HomePage = () => {
       }
     };
 
-    fetchPlaces(context.queryToSearch);
-  }, [sendRequest, context.queryToSearch]);
+    fetchPlaces(state.queryToSearch);
+  }, [sendRequest, state]);
 
   return (
     <>

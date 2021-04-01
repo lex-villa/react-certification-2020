@@ -1,14 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import HomePage from '../../pages/Home';
 import VideoDetails from '../../pages/VideoDetails/VideoDetails.component';
 import Layout from '../Layout';
-import { Context } from '../../utils/context/context';
 
 const App = () => {
-  const [queryFromSeacrhInput, setQueryFromSearchInput] = useState('Goku vs Jiren');
-
   const routes = (
     <Switch>
       <Route path="/" exact>
@@ -21,18 +18,11 @@ const App = () => {
   );
 
   return (
-    <Context.Provider
-      value={{
-        queryToSearch: queryFromSeacrhInput,
-        setQueryFromSearchInput,
-      }}
-    >
-      <BrowserRouter>
-        <Layout>
-          <main>{routes}</main>
-        </Layout>
-      </BrowserRouter>
-    </Context.Provider>
+    <BrowserRouter>
+      <Layout>
+        <main>{routes}</main>
+      </Layout>
+    </BrowserRouter>
   );
 };
 

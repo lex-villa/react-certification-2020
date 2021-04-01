@@ -1,16 +1,16 @@
 import React, { useState, useContext } from 'react';
 
 import { Form } from './SearchInput.styled';
-import { Context } from '../../utils/context/context';
+import { Context } from '../../utils/store/Store';
 
 const SearchInput = () => {
   const [inputValue, setInputValue] = useState('');
-  const context = useContext(Context);
+  const dispatch = useContext(Context)[1];
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
     console.log('estoy buscando...');
-    context.setQueryFromSearchInput(inputValue);
+    dispatch({ type: 'UPDATE_QUERY_TO_SEARCH', queryToSearch: inputValue });
   };
 
   return (
