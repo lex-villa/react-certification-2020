@@ -12,6 +12,7 @@ const VideoListHome = (props) => {
           image={element.snippet.thumbnails.high.url}
           title={element.snippet.title}
           description={element.snippet.description}
+          videoId={element.id.videoId}
         />
       ))}
     </GridView>
