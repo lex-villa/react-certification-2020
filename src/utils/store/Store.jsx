@@ -3,6 +3,7 @@ import reducer from '../reducers/reducer';
 
 const initialState = {
   queryToSearch: 'goku vs jiren',
+  isDarkTheme: false,
 };
 
 const Store = ({ children }) => {

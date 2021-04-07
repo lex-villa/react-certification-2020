@@ -30,7 +30,7 @@ const HomePage = () => {
     };
 
     fetchPlaces(state.queryToSearch);
-  }, [sendRequest, state]);
+  }, [sendRequest, state.queryToSearch]);
 
   return (
     <>

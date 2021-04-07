@@ -7,7 +7,7 @@ export const Aside = styled.aside`
   z-index: 100;
   height: 100vh;
   width: 250px;
-  background: white;
+  background: ${({ theme }) => theme.body};
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 
   nav {

@@ -23,7 +23,7 @@ const Ul = styled.ul`
   a {
     display: block;
     border: 1px solid transparent;
-    color: #292929;
+    color: ${({ theme }) => theme.text};
     text-decoration: none;
     padding: 0;
     font-weight: normal;
@@ -37,7 +37,6 @@ const Ul = styled.ul`
     &:hover,
     &:active {
       background: rgba(0, 0, 0, 0.1);
-      color: #292929;
     }
   }
 `;

@@ -6,6 +6,12 @@ const reducer = (state, action) => {
         queryToSearch: action.queryToSearch,
       };
 
+    case 'SWITCH_THEME':
+      return {
+        ...state,
+        isDarkTheme: !state.isDarkTheme,
+      };
+
     default:
       return state;
   }
