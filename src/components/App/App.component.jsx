@@ -8,6 +8,7 @@ import HomePage from '../../pages/Home';
 import VideoDetails from '../../pages/VideoDetails/VideoDetails.component';
 import Layout from '../Layout';
 import { Context } from '../../utils/store/Store';
+import AuthPage from '../../pages/AuthPage/AuthPage.page';
 
 const App = () => {
   const state = useContext(Context)[0];
@@ -19,6 +20,9 @@ const App = () => {
       </Route>
       <Route path="/videoDetails/:videoId">
         <VideoDetails />
+      </Route>
+      <Route path="/auth">
+        <AuthPage />
       </Route>
     </Switch>
   );

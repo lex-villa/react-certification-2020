@@ -45,6 +45,9 @@ const NavLinks = () => {
   return (
     <Ul>
       <li>
+        <NavLink to="/auth">Login</NavLink>
+      </li>
+      <li>
         <NavLink to="/">Home</NavLink>
       </li>
     </Ul>
