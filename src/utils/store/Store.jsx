@@ -4,6 +4,8 @@ import reducer from '../reducers/reducer';
 const initialState = {
   queryToSearch: 'goku vs jiren',
   isDarkTheme: false,
+  isLoggedIn: false,
+  userData: null,
 };
 
 const Store = ({ children }) => {
@@ -15,22 +17,3 @@ const Store = ({ children }) => {
 export const Context = createContext(initialState);
 
 export default Store;
-
-// export const SearchQueryContext = createContext({
-//   queryToSearch: null,
-//   setQueryFromSearchInput: null,
-// });
-
-// export default (props) => {
-//   const [queryFromSeacrhInput, setQueryFromSearchInput] = useState('Goku vs Jiren');
-//   return (
-//     <SearchQueryContext.Provider
-//       value={{
-//         queryToSearch: queryFromSeacrhInput,
-//         setQueryFromSearchInput,
-//       }}
-//     >
-//       {props.children}
-//     </SearchQueryContext.Provider>
-//   );
-// };

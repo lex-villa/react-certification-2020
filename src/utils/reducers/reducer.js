@@ -12,6 +12,20 @@ const reducer = (state, action) => {
         isDarkTheme: !state.isDarkTheme,
       };
 
+    case 'LOGIN_SUCCESS':
+      return {
+        ...state,
+        isLoggedIn: true,
+        userData: action.userData,
+      };
+
+    case 'LOGOUT':
+      return {
+        ...state,
+        isLoggedIn: false,
+        userData: null,
+      };
+
     default:
       return state;
   }

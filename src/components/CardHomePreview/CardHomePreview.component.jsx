@@ -6,7 +6,12 @@ const CardHomePreview = (props) => {
   const history = useHistory();
 
   const onClickHandler = () => {
-    history.push(`/videoDetails/${props.videoId}`);
+    console.log('path perro', history.location.pathname)
+    if (history.location.pathname === '/favorites') {
+      history.push(`/favorites/${props.videoId}`);
+    } else {
+      history.push(`/videoDetails/${props.videoId}`);
+    }
   };
 
   return (

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { Context } from '../../../utils/store/Store';
 
 const Ul = styled.ul`
   list-style: none;
@@ -42,11 +43,28 @@ const Ul = styled.ul`
 `;
 
 const NavLinks = () => {
+  const [state, dispatch] = useContext(Context);
+
+  const handleLogout = () => {
+    dispatch({ type: 'LOGOUT' });
+  };
+
   return (
     <Ul>
       <li>
-        <NavLink to="/auth">Login</NavLink>
+        {state.isLoggedIn ? (
+          <NavLink to="/" onClick={handleLogout}>
+            Logout
+          </NavLink>
+        ) : (
+          <NavLink to="/auth">Login</NavLink>
+        )}
       </li>
+      {state.isLoggedIn && (
+        <li>
+          <NavLink to="favorites">Favorites</NavLink>
+        </li>
+      )}
       <li>
         <NavLink to="/">Home</NavLink>
       </li>

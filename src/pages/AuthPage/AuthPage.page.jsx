@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { Card } from './AuthPage.styled';
 import loginApi from '../../utils/login.api';
+import { Context } from '../../utils/store/Store';
 
 const AuthPage = () => {
+  const history = useHistory();
+
+  const [, dispatch] = useContext(Context);
+
   const [userNameValue, setUserNameValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
 
@@ -13,8 +19,8 @@ const AuthPage = () => {
 
     try {
       const response = await loginApi(userNameValue, passwordValue);
-      console.log('despues del await');
-      console.log(response);
+      dispatch({ type: 'LOGIN_SUCCESS', userData: response });
+      history.push('/');
     } catch (error) {
       console.log('entro al error');
       console.log(error);

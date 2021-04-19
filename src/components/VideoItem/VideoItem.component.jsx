@@ -6,7 +6,11 @@ import { VideoItemContainer } from './VideoItem.styled';
 const VideoItem = (props) => {
   const history = useHistory();
   const onClickHandler = () => {
-    history.push(`/videoDetails/${props.videoId}`);
+    if (history.location.pathname.includes('favorites')) {
+      history.push(`/favorites/${props.videoId}`);
+    } else {
+      history.push(`/videoDetails/${props.videoId}`);
+    }
   };
 
   return (

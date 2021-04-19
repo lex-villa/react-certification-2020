@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
 import { GlobalStyles } from '../GlobalStyles.js/GlobalStyles';
@@ -9,23 +9,55 @@ import VideoDetails from '../../pages/VideoDetails/VideoDetails.component';
 import Layout from '../Layout';
 import { Context } from '../../utils/store/Store';
 import AuthPage from '../../pages/AuthPage/AuthPage.page';
+import FavoritesList from '../FavoritesList/FavoritesList.component';
+import FavoritesDetails from '../FavoritesDetails/FavoritesDetails.component';
+
 
 const App = () => {
   const state = useContext(Context)[0];
 
-  const routes = (
-    <Switch>
-      <Route path="/" exact>
-        <HomePage />
-      </Route>
-      <Route path="/videoDetails/:videoId">
-        <VideoDetails />
-      </Route>
-      <Route path="/auth">
-        <AuthPage />
-      </Route>
-    </Switch>
-  );
+  let routes;
+
+  if (state.isLoggedIn) {
+    routes = (
+      <Switch>
+        <Route path="/" exact>
+          <HomePage />
+        </Route>
+        <Route path="/favorites/:videoId">
+          <FavoritesDetails />
+        </Route>
+        <Route path="/favorites">
+          <FavoritesList />
+        </Route>
+        <Route path="/videoDetails/:videoId">
+          <VideoDetails />
+        </Route>
+        <Redirect to="/" />
+      </Switch>
+    );
+  } else {
+    routes = (
+      <Switch>
+        <Route path="/" exact>
+          <HomePage />
+        </Route>
+        <Route path="/favorites/:videoId">
+          <FavoritesDetails />
+        </Route>
+        <Route path="/favorites">
+          <FavoritesList />
+        </Route>
+        <Route path="/videoDetails/:videoId">
+          <VideoDetails />
+        </Route>
+        <Route path="/auth">
+          <AuthPage />
+        </Route>
+        <Redirect to="/auth" />
+      </Switch>
+    );
+  }
 
   return (
     <BrowserRouter>
@@ -38,6 +70,7 @@ const App = () => {
         </>
       </ThemeProvider>
     </BrowserRouter>
+
   );
 };
 
