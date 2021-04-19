@@ -21,7 +21,6 @@ const FavoritesDetails = () => {
     clearError: clearErrorFetchVideoInfo,
   } = useHttpClient();
 
-
   useEffect(() => {
     const fetchVideoInfo = async (videoIdParam) => {
       const baseURL = process.env.REACT_APP_YOUTUBE_API_V3_VIDEOS_URL;
@@ -38,7 +37,6 @@ const FavoritesDetails = () => {
         console.log(err);
       }
     };
-
 
     fetchVideoInfo(videoId);
   }, [sendRequestFetchVideoInfo, videoId]);

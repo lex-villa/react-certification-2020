@@ -12,7 +12,6 @@ import AuthPage from '../../pages/AuthPage/AuthPage.page';
 import FavoritesList from '../FavoritesList/FavoritesList.component';
 import FavoritesDetails from '../FavoritesDetails/FavoritesDetails.component';
 
-
 const App = () => {
   const state = useContext(Context)[0];
 
@@ -70,7 +69,6 @@ const App = () => {
         </>
       </ThemeProvider>
     </BrowserRouter>
-
   );
 };
 
