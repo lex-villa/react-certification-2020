@@ -2,7 +2,6 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { Card } from './CardHomePreview.styled';
 
-
 const CardHomePreview = (props) => {
   const history = useHistory();
 

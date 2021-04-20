@@ -13,12 +13,12 @@ const VideoPlayer = ({ videoInfo }) => {
     const isFound = JSON.parse(localStorage.getItem('favorites'))?.findIndex(
       (element) => {
         return element.id === videoInfo.items[0].id;
-      });
-    console.log('se encontro', isFound)
+      }
+    );
+    console.log('se encontro', isFound);
     setIsFavoriteIndex(isFound);
     setIsFavorite(isFound >= 0);
   }, [storedFavorites, videoInfo.items]);
-
 
   const handleClickAdd = async () => {
     const thereIsStoredFavorites = await JSON.parse(localStorage.getItem('favorites'));
@@ -33,12 +33,12 @@ const VideoPlayer = ({ videoInfo }) => {
     };
 
     if (thereIsStoredFavorites) {
-      console.log("entro al if")
+      console.log('entro al if');
       thereIsStoredFavorites.push(itemToStore);
-      console.log('despues del push', thereIsStoredFavorites)
+      console.log('despues del push', thereIsStoredFavorites);
       localStorage.setItem('favorites', JSON.stringify(thereIsStoredFavorites));
     } else {
-      console.log("entro al else")
+      console.log('entro al else');
       localStorage.setItem('favorites', JSON.stringify([itemToStore]));
     }
 
@@ -61,13 +61,13 @@ const VideoPlayer = ({ videoInfo }) => {
       <button type="button" onClick={handleClickRemove}>
         Remove favorites
       </button>
-    )
+    );
   } else {
     buttonToggle = (
       <button type="button" onClick={handleClickAdd}>
         Add favorites
       </button>
-    )
+    );
   }
 
   return (
