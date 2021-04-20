@@ -69,6 +69,7 @@ const VideoPlayer = ({ videoInfo }) => {
       </button>
     );
   }
+  console.log('valor del btn', buttonToggle)
 
   return (
     <VideoPlayerContainer>
@@ -80,7 +81,8 @@ const VideoPlayer = ({ videoInfo }) => {
         />
       </div>
       <div className="videoPlayer__info">
-        {state.isLoggedIn && { buttonToggle }}
+        {state.isLoggedIn && buttonToggle}
+        {/* {buttonToggle} */}
         <h3>{videoInfo.items[0].snippet.title}</h3>
         <p>{videoInfo.items[0].snippet.description}</p>
       </div>
