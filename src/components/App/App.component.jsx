@@ -41,12 +41,6 @@ const App = () => {
         <Route path="/" exact>
           <HomePage />
         </Route>
-        <Route path="/favorites/:videoId">
-          <FavoritesDetails />
-        </Route>
-        <Route path="/favorites">
-          <FavoritesList />
-        </Route>
         <Route path="/videoDetails/:videoId">
           <VideoDetails />
         </Route>

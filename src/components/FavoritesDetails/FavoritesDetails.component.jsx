@@ -13,6 +13,31 @@ const FavoritesDetails = () => {
   const { videoId } = useParams();
 
   const [videoInfo, setVideoInfo] = useState();
+  const [favorites, setfavorites] = useState([])
+
+  console.log(favorites)
+
+  useEffect(() => {
+    const storedFavorites = JSON.parse(localStorage.getItem('favorites'));
+
+    const formatedStoredFavorites = storedFavorites.map((video) => {
+      return {
+        id: {
+          videoId: video.id,
+        },
+        snippet: {
+          thumbnails: {
+            high: {
+              url: video.image,
+            },
+          },
+          title: video.title,
+        },
+      };
+    });
+
+    setfavorites(formatedStoredFavorites);
+  }, []);
 
   const {
     isLoading: isLoadingFetchVideoInfo,
@@ -58,7 +83,7 @@ const FavoritesDetails = () => {
 
         {data.items && (
           <div className="videoDetails__listSuggestedVideos--position">
-            <ListSuggestedVideos videosSuggested={data.items} />
+            <ListSuggestedVideos videosSuggested={favorites} />
           </div>
         )}
       </VideoDetailsContainer>

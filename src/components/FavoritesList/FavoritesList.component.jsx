@@ -1,23 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import CardHomePreview from '../CardHomePreview';
 import { GridView } from './FavoritesList.styled';
-import { data } from '../../utils/youtube-videos-mock';
 
 const FavoritesList = () => {
-  return (
-    <GridView>
-      {data.items.map((element) => (
-        <CardHomePreview
-          key={`${element.id.videoId}`}
-          image={element.snippet.thumbnails.high.url}
-          title={element.snippet.title}
-          description={element.snippet.description}
-          videoId={element.id.videoId}
-        />
-      ))}
-    </GridView>
-  );
+  const [storedFavorites] = useState(JSON.parse(localStorage.getItem('favorites')));
+
+  let content = <p>Add favorites</p>;
+
+  if (storedFavorites) {
+    content = (
+      <GridView>
+        {storedFavorites.map((element) => (
+          <CardHomePreview
+            key={`${element.id}`}
+            image={element.image}
+            title={element.title}
+            description={element.description}
+            videoId={element.id}
+          />
+        ))}
+      </GridView>
+    );
+  }
+
+  return <>{content}</>;
 };
 
 export default FavoritesList;

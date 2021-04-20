@@ -9,7 +9,7 @@ const ListSuggestedVideos = ({ videosSuggested }) => {
     <>
       {videosSuggested.map((video) => (
         <VideoItem
-          key={`${video.id.videoId}`}
+          key={video.id.videoId}
           image={
             video.snippet.thumbnails.high.url || video.snippet.thumbnails.standard.url
           }

@@ -17,6 +17,10 @@ export const VideoPlayerContainer = styled.div`
     width: 100%;
     height: 30%;
 
+    button {
+      cursor: pointer;
+    }
+
     h3 {
       font-size: 15px;
       overflow: hidden;
