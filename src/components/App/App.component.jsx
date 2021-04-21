@@ -26,7 +26,7 @@ const App = () => {
         <Route path="/favorites/:videoId">
           <FavoritesDetails />
         </Route>
-        <Route path="/favorites">
+        <Route path="/favorites" exact>
           <FavoritesList />
         </Route>
         <Route path="/videoDetails/:videoId">

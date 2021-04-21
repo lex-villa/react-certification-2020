@@ -62,7 +62,7 @@ const NavLinks = () => {
       </li>
       {state.isLoggedIn && (
         <li>
-          <NavLink to="favorites">Favorites</NavLink>
+          <NavLink to="/favorites">Favorites</NavLink>
         </li>
       )}
       <li>
