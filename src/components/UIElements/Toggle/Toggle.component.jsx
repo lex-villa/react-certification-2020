@@ -6,7 +6,7 @@ import { Context } from '../../../utils/store/Store';
 const Toggle = () => {
   const dispatch = useContext(Context)[1];
 
-  const handleClick = (e) => {
+  const handleClick = () => {
     dispatch({ type: 'SWITCH_THEME' });
   };
 
