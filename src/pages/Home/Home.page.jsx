@@ -22,7 +22,6 @@ const HomePage = () => {
         const responseData = await sendRequest(
           `${baseURL}?part=snippet&key=${apikey}&q=${queryToSearch}&maxResults=${maxResults}`
         );
-        console.log(responseData);
         setData(responseData);
       } catch (err) {
         console.log(err);

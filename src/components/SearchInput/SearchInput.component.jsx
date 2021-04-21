@@ -9,7 +9,6 @@ const SearchInput = () => {
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
-    console.log('estoy buscando...');
     dispatch({ type: 'UPDATE_QUERY_TO_SEARCH', queryToSearch: inputValue });
   };
 

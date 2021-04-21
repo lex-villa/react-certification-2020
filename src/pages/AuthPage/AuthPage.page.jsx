@@ -15,14 +15,12 @@ const AuthPage = () => {
 
   const submitHandler = async (event) => {
     event.preventDefault();
-    console.log('entro al submithandler');
 
     try {
       const response = await loginApi(userNameValue, passwordValue);
       dispatch({ type: 'LOGIN_SUCCESS', userData: response });
       history.push('/');
     } catch (error) {
-      console.log('entro al error');
       console.log(error);
     }
   };

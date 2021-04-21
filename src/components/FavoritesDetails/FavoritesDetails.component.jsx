@@ -15,8 +15,6 @@ const FavoritesDetails = () => {
   const [videoInfo, setVideoInfo] = useState();
   const [favorites, setfavorites] = useState([]);
 
-  console.log(favorites);
-
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem('favorites'));
 

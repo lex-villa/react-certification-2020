@@ -7,8 +7,6 @@ const Toggle = () => {
   const dispatch = useContext(Context)[1];
 
   const handleClick = (e) => {
-    console.log('soy el click');
-    console.log(e.target.checked);
     dispatch({ type: 'SWITCH_THEME' });
   };
 

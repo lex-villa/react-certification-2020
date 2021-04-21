@@ -3,8 +3,6 @@ import React from 'react';
 import VideoItem from '../VideoItem/VideoItem.component';
 
 const ListSuggestedVideos = ({ videosSuggested }) => {
-  console.log('lista en video sugges');
-  console.log(videosSuggested);
   return (
     <>
       {videosSuggested.map((video) => (

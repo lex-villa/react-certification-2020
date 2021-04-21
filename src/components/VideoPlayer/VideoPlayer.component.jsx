@@ -15,7 +15,6 @@ const VideoPlayer = ({ videoInfo }) => {
         return element.id === videoInfo.items[0].id;
       }
     );
-    console.log('se encontro', isFound);
     setIsFavoriteIndex(isFound);
     setIsFavorite(isFound >= 0);
   }, [storedFavorites, videoInfo.items]);
@@ -33,12 +32,9 @@ const VideoPlayer = ({ videoInfo }) => {
     };
 
     if (thereIsStoredFavorites) {
-      console.log('entro al if');
       thereIsStoredFavorites.push(itemToStore);
-      console.log('despues del push', thereIsStoredFavorites);
       localStorage.setItem('favorites', JSON.stringify(thereIsStoredFavorites));
     } else {
-      console.log('entro al else');
       localStorage.setItem('favorites', JSON.stringify([itemToStore]));
     }
 
@@ -69,7 +65,6 @@ const VideoPlayer = ({ videoInfo }) => {
       </button>
     );
   }
-  console.log('valor del btn', buttonToggle)
 
   return (
     <VideoPlayerContainer>
