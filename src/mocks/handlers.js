@@ -2,7 +2,7 @@ import { rest } from 'msw';
 
 export const handlers = [
   rest.get(
-    '/https://www.googleapis.com/youtube/v3/searchpart=snippet&key=AIzaSyDN0P1UB4W39-XdmmA9wniCAlXA0f3WprU&q=wizeline&maxResults=10',
+    'https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyDN0P1UB4W39-XdmmA9wniCAlXA0f3WprU&q=wizeline&maxResults=10',
     (req, res, ctx) => {
       return res(
         ctx.status(200),

@@ -30,5 +30,5 @@ test('displays image for each item from the server', async () => {
   );
 
   const resultImages = await screen.findAllByRole('img');
-  expect(resultImages).toHaveLength(10);
+  expect(resultImages).toHaveLength(4);
 });
