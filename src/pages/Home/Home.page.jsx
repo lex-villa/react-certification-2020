@@ -13,12 +13,16 @@ const HomePage = () => {
 
   useEffect(() => {
     const fetchPlaces = async (queryFromSearchBarParam) => {
-      const baseURL = process.env.REACT_APP_YOUTUBE_API_V3_SEARCH_URL;
-      const apikey = process.env.REACT_APP_GOOGLE_API_KEY;
+      const baseURL = 'https://www.googleapis.com/youtube/v3/search';
+      const apikey = 'AIzaSyDN0P1UB4W39-XdmmA9wniCAlXA0f3WprU';
       const maxResults = 10;
       const queryToSearch = queryFromSearchBarParam;
 
       try {
+        console.log(
+          'la url',
+          `${baseURL}?part=snippet&key=${apikey}&q=${queryToSearch}&maxResults=${maxResults}`
+        );
         const responseData = await sendRequest(
           `${baseURL}?part=snippet&key=${apikey}&q=${queryToSearch}&maxResults=${maxResults}`
         );
