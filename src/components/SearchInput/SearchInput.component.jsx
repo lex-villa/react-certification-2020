@@ -5,7 +5,7 @@ import { Context } from '../../utils/store/Store';
 
 const SearchInput = () => {
   const [inputValue, setInputValue] = useState('');
-  const dispatch = useContext(Context)[1];
+  const [, dispatch] = useContext(Context);
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
@@ -13,10 +13,11 @@ const SearchInput = () => {
   };
 
   return (
-    <Form onSubmit={onSubmitHandler}>
+    <Form data-testid="form" onSubmit={onSubmitHandler}>
       <div htmlFor="searchInput" onClick={onSubmitHandler} aria-hidden="true" />
       <input
         id="searchInput"
+        aria-label="search-input"
         type="text"
         placeholder="Search..."
         value={inputValue}

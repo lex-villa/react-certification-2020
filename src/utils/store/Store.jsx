@@ -1,7 +1,7 @@
 import React, { createContext, useReducer } from 'react';
 import reducer from '../reducers/reducer';
 
-const initialState = {
+export const initialState = {
   queryToSearch: 'wizeline',
   isDarkTheme: false,
   isLoggedIn: false,

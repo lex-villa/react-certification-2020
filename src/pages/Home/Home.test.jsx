@@ -7,21 +7,20 @@ import Home from './Home.page';
 import Store from '../../utils/store/Store';
 import 'regenerator-runtime/runtime';
 
-// This configures a request mocking server with the given request handlers.
-export const server = setupServer(...handlers);
+const server = setupServer(...handlers);
 
 beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
-test('displays image for each item from the server', async () => {
-  const portalRoot = document.createElement('div');
-  portalRoot.setAttribute('id', 'modal-hook');
-  document.body.appendChild(portalRoot);
+test('Renders an image for each item reached from a search to youtube API', async () => {
+  const portalModal = document.createElement('div');
+  portalModal.setAttribute('id', 'modal-hook');
+  document.body.appendChild(portalModal);
 
-  const portalRootBackdrop = document.createElement('div');
-  portalRootBackdrop.setAttribute('id', 'backdrop-hook');
-  document.body.appendChild(portalRootBackdrop);
+  const portalBackdrop = document.createElement('div');
+  portalBackdrop.setAttribute('id', 'backdrop-hook');
+  document.body.appendChild(portalBackdrop);
 
   render(
     <Store>
