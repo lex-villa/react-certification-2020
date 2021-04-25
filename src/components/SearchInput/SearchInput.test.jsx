@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import SearchInput from './SearchInput.component';
-import Store, { initialState } from '../../utils/store/Store';
+import Store from '../../utils/store/Store';
 
 describe('<SearchInput />', () => {
   test('the value of the input is equal to the value written after the change event', () => {
@@ -18,11 +18,5 @@ describe('<SearchInput />', () => {
     fireEvent.submit(form);
 
     expect(input.value).toBe('goku');
-    expect(initialState).toStrictEqual({
-      queryToSearch: 'wizeline',
-      isDarkTheme: false,
-      isLoggedIn: false,
-      userData: null,
-    });
   });
 });

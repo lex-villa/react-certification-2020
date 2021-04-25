@@ -54,13 +54,13 @@ const VideoPlayer = ({ videoInfo }) => {
   let buttonToggle;
   if (isFavorite) {
     buttonToggle = (
-      <button type="button" onClick={handleClickRemove} data-testid="btn-add-favorite">
+      <button type="button" onClick={handleClickRemove} data-testid="btn-delete-favorite">
         Remove favorites
       </button>
     );
   } else {
     buttonToggle = (
-      <button type="button" onClick={handleClickAdd} data-testid="btn-delete-favorite">
+      <button type="button" onClick={handleClickAdd} data-testid="btn-add-favorite">
         Add favorites
       </button>
     );
