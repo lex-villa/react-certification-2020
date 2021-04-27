@@ -68,7 +68,9 @@ const NavLinks = () => {
         </li>
       )}
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="/" data-testid="navLink-home">
+          Home
+        </NavLink>
       </li>
     </Ul>
   );

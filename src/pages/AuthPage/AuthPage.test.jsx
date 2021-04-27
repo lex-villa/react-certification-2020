@@ -33,6 +33,14 @@ describe('<AuthPage />', () => {
     expect(sumbmitBtn).toBeTruthy();
   });
 
+  /// ////////////////////////////////////////////////////////////
+  // The next test throws this FAIL,
+  // I have done a lot of research and I don't know why it happens.
+
+  // expect(jest.fn()).toHaveBeenCalledWith(...expected)
+  // Expected: "/"
+  // Number of calls: 0
+
   test('the submit button redirect to "/" route', async () => {
     render(
       <Store>
