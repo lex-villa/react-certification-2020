@@ -17,7 +17,7 @@ describe('Store Context', () => {
     });
   });
 
-  test('update "queryToSearch" param in the state with dispatch', () => {
+  test('test the correct update when a user trigger a search', () => {
     render(<Store />);
     const { result } = renderHook(() => useReducer(reducer, initialState));
 
@@ -31,6 +31,75 @@ describe('Store Context', () => {
       isDarkTheme: false,
       isLoggedIn: false,
       queryToSearch: 'Goku',
+      userData: null,
+    });
+  });
+
+  test('test the correct update when a user trigger a switch of theme', () => {
+    render(<Store />);
+    const { result } = renderHook(() => useReducer(reducer, initialState));
+
+    act(() => {
+      result.current[1]({ type: 'SWITCH_THEME' });
+    });
+
+    const state = result.current[0];
+
+    expect(state).toStrictEqual({
+      isDarkTheme: true,
+      isLoggedIn: false,
+      queryToSearch: 'wizeline',
+      userData: null,
+    });
+  });
+
+  test('test the correct update when a user trigger a log in', () => {
+    render(<Store />);
+    const { result } = renderHook(() => useReducer(reducer, initialState));
+
+    act(() => {
+      result.current[1]({
+        type: 'LOGIN_SUCCESS',
+        userData: {
+          id: '123',
+          name: 'Wizeline',
+          avatarUrl:
+            'https://media.glassdoor.com/sqll/868055/wizeline-squarelogo-1473976610815.png',
+        },
+      });
+    });
+
+    const state = result.current[0];
+
+    expect(state).toStrictEqual({
+      isDarkTheme: false,
+      isLoggedIn: true,
+      queryToSearch: 'wizeline',
+      userData: {
+        id: '123',
+        name: 'Wizeline',
+        avatarUrl:
+          'https://media.glassdoor.com/sqll/868055/wizeline-squarelogo-1473976610815.png',
+      },
+    });
+  });
+
+  test('test the correct update when a user trigger a log out', () => {
+    render(<Store />);
+    const { result } = renderHook(() => useReducer(reducer, initialState));
+
+    act(() => {
+      result.current[1]({
+        type: 'LOGOUT',
+      });
+    });
+
+    const state = result.current[0];
+
+    expect(state).toStrictEqual({
+      isDarkTheme: false,
+      isLoggedIn: false,
+      queryToSearch: 'wizeline',
       userData: null,
     });
   });
