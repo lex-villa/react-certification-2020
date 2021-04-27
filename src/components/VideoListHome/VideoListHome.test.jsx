@@ -1,13 +1,3 @@
-// import React from 'react';
-// import { render, screen } from '@testing-library/react';
-// import VideoListHome from './VideoListHome.component';
-
-// test('displays image for each item from the server', async () => {
-//   render(<VideoListHome data />);
-
-//   const resultImages = await screen.findAllByRole('img', { name: /jpg$/i });
-//   expect(resultImages).toHaveLength(4);
-// });
 import React from 'react';
 import { configure, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';

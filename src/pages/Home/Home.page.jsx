@@ -19,10 +19,6 @@ const HomePage = () => {
       const queryToSearch = queryFromSearchBarParam;
 
       try {
-        console.log(
-          'la url',
-          `${baseURL}?part=snippet&key=${apikey}&q=${queryToSearch}&maxResults=${maxResults}`
-        );
         const responseData = await sendRequest(
           `${baseURL}?part=snippet&key=${apikey}&q=${queryToSearch}&maxResults=${maxResults}`
         );

@@ -33,7 +33,7 @@ describe('<AuthPage />', () => {
     expect(sumbmitBtn).toBeTruthy();
   });
 
-  test('isLoggedIn in Context change after correctly submit username and password', async () => {
+  test('the submit button redirect to "/" route', async () => {
     render(
       <Store>
         <MemoryRouter>
@@ -43,23 +43,13 @@ describe('<AuthPage />', () => {
     );
 
     const inputUsername = screen.queryByTestId('input-username');
-    // let inputPassword = screen.queryByTestId('input-password');
+    const inputPassword = screen.queryByTestId('input-password');
     const sumbmitBtn = screen.queryByTestId('submit-btn');
-    const form = screen.queryByTestId('form');
 
     fireEvent.change(inputUsername, { target: { value: 'wizeline' } });
-    // fireEvent.change(inputPassword, { target: { value: 'Rocks!' } });
+    fireEvent.change(inputPassword, { target: { value: 'Rocks' } });
     fireEvent.click(sumbmitBtn);
-    fireEvent.submit(form);
-    fireEvent.submit(sumbmitBtn);
 
-    // inputUsername = await screen.findByTestId('input-username');
-    // const text = await screen.findByText('Hello! You are logged In');
-    // inputPassword = screen.queryByTestId('input-password');
-    // sumbmitBtn = screen.queryByTestId('submit-btn');
-
-    // expect(mockHistoryPush).toHaveBeenCalledWith('/');
-    // expect(text).toBeTruthy();
-    expect(mockHistoryPush).toHaveBeenCalledWith('0');
+    expect(mockHistoryPush).toHaveBeenCalledWith('/');
   });
 });
