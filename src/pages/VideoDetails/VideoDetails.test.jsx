@@ -26,14 +26,14 @@ describe('<VideoDetails />', () => {
     },
   });
 
-  test('Render the section that shows the list of videos suggested related to the video clicked', async () => {
+  test('Render the section that shows the list of videos suggested related to the video clicked', () => {
     render(
       <MemoryRouter>
         <VideoDetails />
       </MemoryRouter>
     );
 
-    const suggestedSection = await screen.findByTestId('suggesstedSection');
+    const suggestedSection = screen.findByTestId('suggesstedSection');
 
     expect(suggestedSection).toBeTruthy();
   });

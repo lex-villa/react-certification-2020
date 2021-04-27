@@ -40,6 +40,7 @@ const HomePage = () => {
         </div>
       )}
       {state.isLoggedIn && <p>Hello! You are logged In</p>}
+      <p>Home!</p>
       {!isLoading && data && <VideoListHome data={data} />}
     </>
   );
