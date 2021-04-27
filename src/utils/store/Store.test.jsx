@@ -2,7 +2,7 @@ import React, { useReducer } from 'react';
 import { render } from '@testing-library/react';
 import { renderHook, act } from '@testing-library/react-hooks';
 import Store, { initialState } from './Store';
-import reducer from '../reducers/reducer'
+import reducer from '../reducers/reducer';
 
 describe('Store Context', () => {
   test('return configured initial state', () => {

@@ -17,7 +17,7 @@ describe('<VideoPlayer />', () => {
                   description: 'description',
                 },
               },
-            ]
+            ],
           }}
         />
       </Store>
@@ -48,7 +48,7 @@ describe('<VideoPlayer />', () => {
                   description: 'description',
                 },
               },
-            ]
+            ],
           }}
         />
       </Context.Provider>

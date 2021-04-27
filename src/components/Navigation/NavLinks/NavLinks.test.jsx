@@ -19,7 +19,7 @@ describe('<NavLinks />', () => {
                     description: 'description',
                   },
                 },
-              ]
+              ],
             }}
           />
         </BrowserRouter>
@@ -51,7 +51,7 @@ describe('<NavLinks />', () => {
                     description: 'description',
                   },
                 },
-              ]
+              ],
             }}
           />
         </BrowserRouter>

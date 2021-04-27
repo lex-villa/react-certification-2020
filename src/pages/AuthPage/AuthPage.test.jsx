@@ -28,7 +28,6 @@ describe('<AuthPage />', () => {
     const inputPassword = screen.queryByTestId('input-password');
     const sumbmitBtn = screen.queryByTestId('submit-btn');
 
-
     expect(inputUsername).toBeTruthy();
     expect(inputPassword).toBeTruthy();
     expect(sumbmitBtn).toBeTruthy();
