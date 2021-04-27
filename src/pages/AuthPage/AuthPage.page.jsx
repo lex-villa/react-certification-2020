@@ -27,7 +27,7 @@ const AuthPage = () => {
 
   return (
     <Card>
-      <form onSubmit={submitHandler}>
+      <form onSubmit={submitHandler} data-testid="form">
         <h2>Login Required</h2>
         <hr />
 
@@ -39,6 +39,7 @@ const AuthPage = () => {
               type="text"
               placeholder="Username"
               value={userNameValue}
+              data-testid="input-username"
               onChange={(e) => setUserNameValue(e.target.value)}
             />
           </label>
@@ -52,11 +53,14 @@ const AuthPage = () => {
               type="password"
               placeholder="Password"
               value={passwordValue}
+              data-testid="input-password"
               onChange={(e) => setPasswordValue(e.target.value)}
             />
           </label>
         </div>
-        <button type="submit">LOGIN</button>
+        <button type="submit" data-testid="submit-btn">
+          LOGIN
+        </button>
       </form>
     </Card>
   );

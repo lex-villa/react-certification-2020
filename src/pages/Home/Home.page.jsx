@@ -43,6 +43,7 @@ const HomePage = () => {
           <LoadingSpinner />
         </div>
       )}
+      {state.isLoggedIn && <p>Hello! You are logged In</p>}
       {!isLoading && data && <VideoListHome data={data} />}
     </>
   );

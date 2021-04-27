@@ -161,4 +161,85 @@ export const handlers = [
       );
     }
   ),
+
+  rest.get('*', (req, res, ctx) => {
+    return res(
+      ctx.status(200),
+      ctx.json({
+        kind: 'youtube#videoListResponse',
+        etag: 'VITRmOmEbhY3xhTn5k8DoH2tVPc',
+        items: [
+          {
+            kind: 'youtube#video',
+            etag: 'uqGgNLYOaoUNwCEe0r6kTu8K68Q',
+            id: '3-BRfzrUk1E',
+            snippet: {
+              publishedAt: '2021-04-24T18:32:27Z',
+              channelId: 'UCSM3FVwdCIJfU0OdjKZb94A',
+              title: 'Reaccionando a mis Memes #2 (Edición Fedeverso)',
+              description:
+                'Reaccionando a mis memes #1 https://www.youtube.com/watch?v=W9WKNpWm51c&t \n\n\n\nDirectos de Lunes a Viernes 8:00 pm (MX) en mi pagina de Facebook: https://www.facebook.com/soyfedelobo\r\n\r\nCanal de series y películas: https://www.youtube.com/elfedewolf \r\n\r\nSegundo canal de videojuegos: https://www.youtube.com/c/Pixelteca \r\n\r\nCanal con Nadia: https://www.youtube.com/c/amorsindistancia \r\n\r\nContacto/Negocios/Conferencias: contacto@fedelobo.com.mx\r\n\r\nSígueme también en las redes sociales:\r\n\r\nTwitter: https://twitter.com/SoyFedelobo\r\nInstagram: https://www.instagram.com/soyfedelobo',
+              thumbnails: {
+                default: {
+                  url: 'https://i.ytimg.com/vi/3-BRfzrUk1E/default.jpg',
+                  width: 120,
+                  height: 90,
+                },
+                medium: {
+                  url: 'https://i.ytimg.com/vi/3-BRfzrUk1E/mqdefault.jpg',
+                  width: 320,
+                  height: 180,
+                },
+                high: {
+                  url: 'https://i.ytimg.com/vi/3-BRfzrUk1E/hqdefault.jpg',
+                  width: 480,
+                  height: 360,
+                },
+                standard: {
+                  url: 'https://i.ytimg.com/vi/3-BRfzrUk1E/sddefault.jpg',
+                  width: 640,
+                  height: 480,
+                },
+                maxres: {
+                  url: 'https://i.ytimg.com/vi/3-BRfzrUk1E/maxresdefault.jpg',
+                  width: 1280,
+                  height: 720,
+                },
+              },
+              channelTitle: 'El Fedelobo',
+              tags: [
+                'federico',
+                'w2m',
+                'gameplays',
+                'juegos',
+                'comedia',
+                'fedelobo',
+                'gameplay',
+                'games',
+                'videogames',
+                'fedewolf',
+                'la historia en 1 video',
+                'historias fedelobo',
+                'historias fedewolf',
+                'la saga en 1 video',
+                'tops',
+                'top videojuegos',
+              ],
+              categoryId: '20',
+              liveBroadcastContent: 'none',
+              localized: {
+                title: 'Reaccionando a mis Memes #2 (Edición Fedeverso)',
+                description:
+                  'Reaccionando a mis memes #1 https://www.youtube.com/watch?v=W9WKNpWm51c&t \n\n\n\nDirectos de Lunes a Viernes 8:00 pm (MX) en mi pagina de Facebook: https://www.facebook.com/soyfedelobo\r\n\r\nCanal de series y películas: https://www.youtube.com/elfedewolf \r\n\r\nSegundo canal de videojuegos: https://www.youtube.com/c/Pixelteca \r\n\r\nCanal con Nadia: https://www.youtube.com/c/amorsindistancia \r\n\r\nContacto/Negocios/Conferencias: contacto@fedelobo.com.mx\r\n\r\nSígueme también en las redes sociales:\r\n\r\nTwitter: https://twitter.com/SoyFedelobo\r\nInstagram: https://www.instagram.com/soyfedelobo',
+              },
+            },
+          },
+        ],
+        pageInfo: {
+          totalResults: 1,
+          resultsPerPage: 1,
+        },
+      })
+    );
+  }),
 ];
