@@ -37,7 +37,7 @@ export const ToggleContainer = styled.label`
   }
 
   input:checked + .slider {
-    background-color: #2196f3;
+    background-color: ${({ theme }) => theme.toggleBackground};
   }
 
   input:focus + .slider {

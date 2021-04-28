@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { Context } from '../../../utils/store/Store';
 
 const Ul = styled.ul`
   list-style: none;
@@ -23,7 +24,7 @@ const Ul = styled.ul`
   a {
     display: block;
     border: 1px solid transparent;
-    color: #292929;
+    color: ${({ theme }) => theme.text};
     text-decoration: none;
     padding: 0;
     font-weight: normal;
@@ -37,16 +38,39 @@ const Ul = styled.ul`
     &:hover,
     &:active {
       background: rgba(0, 0, 0, 0.1);
-      color: #292929;
     }
   }
 `;
 
 const NavLinks = () => {
+  const [state, dispatch] = useContext(Context);
+
+  const handleLogout = () => {
+    dispatch({ type: 'LOGOUT' });
+  };
+
   return (
     <Ul>
       <li>
-        <NavLink to="/">Home</NavLink>
+        {state.isLoggedIn ? (
+          <NavLink to="/" onClick={handleLogout}>
+            Logout
+          </NavLink>
+        ) : (
+          <NavLink to="/auth">Login</NavLink>
+        )}
+      </li>
+      {state.isLoggedIn && (
+        <li>
+          <NavLink to="/favorites" data-testid="navLink-route-to-favorites">
+            Favorites
+          </NavLink>
+        </li>
+      )}
+      <li>
+        <NavLink to="/" data-testid="navLink-home">
+          Home
+        </NavLink>
       </li>
     </Ul>
   );

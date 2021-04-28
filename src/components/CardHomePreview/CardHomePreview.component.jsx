@@ -1,9 +1,20 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { Card } from './CardHomePreview.styled';
 
 const CardHomePreview = (props) => {
+  const history = useHistory();
+
+  const onClickHandler = () => {
+    if (history.location.pathname === '/favorites') {
+      history.push(`/favorites/${props.videoId}`);
+    } else {
+      history.push(`/videoDetails/${props.videoId}`);
+    }
+  };
+
   return (
-    <Card>
+    <Card onClick={onClickHandler}>
       <div className="card-home-review__image">
         <img src={`${props.image}`} alt={props.title} />
       </div>

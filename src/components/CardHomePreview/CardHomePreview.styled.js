@@ -7,7 +7,7 @@ export const Card = styled.div`
   border-radius: 6px;
   padding: 1rem;
   overflow: hidden;
-  background: white;
+  background: ${({ theme }) => theme.backgroundCard};
   width: 100%;
   height: 100%;
   cursor: pointer;
