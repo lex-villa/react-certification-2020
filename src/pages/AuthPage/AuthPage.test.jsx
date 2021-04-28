@@ -14,6 +14,8 @@ jest.mock('react-router-dom', () => ({
   }),
 }));
 
+jest.mock('../../utils/login.api.js');
+
 describe('<AuthPage />', () => {
   test('elements rendered properly', async () => {
     render(
@@ -41,8 +43,8 @@ describe('<AuthPage />', () => {
   // Expected: "/"
   // Number of calls: 0
 
-  test('the submit button redirect to "/" route', async () => {
-    render(
+  test('the submit button redirect to "/" route', async (done) => {
+    const { rerender } = render(
       <Store>
         <MemoryRouter>
           <AuthPage />
@@ -58,6 +60,17 @@ describe('<AuthPage />', () => {
     fireEvent.change(inputPassword, { target: { value: 'Rocks' } });
     fireEvent.click(sumbmitBtn);
 
-    // expect(mockHistoryPush).toHaveBeenCalledWith('/');
+    setTimeout(() => {
+      rerender(
+        <Store>
+          <MemoryRouter>
+            <AuthPage />
+          </MemoryRouter>
+        </Store>
+      );
+
+      expect(mockHistoryPush).toHaveBeenCalledWith('/');
+      done();
+    });
   });
 });

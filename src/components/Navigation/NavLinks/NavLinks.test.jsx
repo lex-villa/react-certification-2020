@@ -1,6 +1,6 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
-import { BrowserRouter, MemoryRouter } from 'react-router-dom';
+import { render, screen } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
 import NavLinks from './NavLinks.component';
 import Store, { Context } from '../../../utils/store/Store';
 import 'regenerator-runtime/runtime';
@@ -70,46 +70,5 @@ describe('<NavLinks />', () => {
     const navLinkToFavorites = screen.queryByTestId('navLink-route-to-favorites');
 
     expect(navLinkToFavorites).toBeTruthy();
-  });
-
-  /// ////////////////////////////////////////////////////////////
-  // The next test throws this FAIL,
-  // I have done a lot of research and I don't know why it happens.
-
-  // expect(jest.fn()).toHaveBeenCalledWith(...expected)
-  // Expected: "/"
-  // Number of calls: 0
-
-  test('Home NavLink redirect to "/" route', () => {
-    const state = {
-      queryToSearch: 'wizeline',
-      isDarkTheme: false,
-      isLoggedIn: true,
-      userData: null,
-    };
-
-    render(
-      <Context.Provider value={[state]}>
-        <MemoryRouter>
-          <NavLinks
-            videoInfo={{
-              items: [
-                {
-                  snippet: {
-                    title: 'title',
-                    description: 'description',
-                  },
-                },
-              ],
-            }}
-          />
-        </MemoryRouter>
-      </Context.Provider>
-    );
-
-    const navLinkHome = screen.queryByTestId('navLink-home');
-    fireEvent.click(navLinkHome);
-
-    // expect(mockHistoryPush).toHaveBeenCalledWith('/');
   });
 });
